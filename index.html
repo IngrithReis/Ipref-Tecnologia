@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPREF Guarulhos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #123;
+    }
+
+    header {
+      background: linear-gradient(90deg, #004779, #009bb5);
+      color: white;
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 13px;
+      font-weight: normal;
+      margin-top: 4px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 35px auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+      padding: 0 20px;
+    }
+
+    .banner {
+      min-height: 330px;
+      border-radius: 18px;
+      background: linear-gradient(rgba(0, 58, 102, 0.88), rgba(0, 58, 102, 0.88)),
+        url('https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 50px;
+      color: white;
+    }
+
+    .banner h1 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .banner p {
+      max-width: 480px;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      min-height: 105px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+      color: #00528a;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .card .icon {
+      font-size: 30px;
+      color: #00a1b8;
+      margin-bottom: 10px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 45px;
+      display: grid;
+      grid-template-columns: 1fr 2.1fr;
+      gap: 24px;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      background: #00a1b8;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 8px 8px 0 0;
+      font-size: 18px;
+    }
+
+    .quick-list, .news-area {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .quick-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 16px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    .quick-item strong {
+      display: block;
+      font-size: 17px;
+      color: #111;
+    }
+
+    .quick-item span {
+      color: #006fa6;
+      font-size: 14px;
+    }
+
+    .quick-icon {
+      font-size: 30px;
+      color: #999;
+      width: 40px;
+      text-align: center;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .news-card {
+      min-height: 210px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #063b63;
+      color: white;
+      display: flex;
+      align-items: end;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .news-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0, 35, 60, 0.85));
+    }
+
+    .news-card h3 {
+      position: relative;
+      z-index: 1;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .news-card:first-child {
+      background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80');
+    }
+
+    .news-card:last-child {
+      background-image: url('https://images.unsplash.com/photo-1541872705-1f73c6400ec9?auto=format&fit=crop&w=900&q=80');
+    }
+
+    footer {
+      background: #003c69;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      header, .hero, main {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .banner {
+        padding: 30px;
+      }
+
+      .banner h1 {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .cards, .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      IPREF
+      <span>Instituto de Previdência dos Funcionários Públicos Municipais de Guarulhos</span>
+<span>Estamos enfrentando uma indisponibilidade temporária em nosso site. Durante esse período, algumas funcionalidades poderão apresentar instabilidade ou ficar momentaneamente indisponíveis.
+
+Caso não consiga acessar a informação desejada, entre em contato com nossos canais de atendimento:
+
+📧 faleconosco@iprefguarulhos.sp.gov.br
+☎️ (11) 2461-6363</span>
+	  
+    </div>
+    
+  </header>
+
+  <section class="hero">
+    <div class="banner">
+      <div>
+        <h1>Bem-vindo ao IPREF</h1>
+        <p>Informação, transparência e serviços previdenciários em um só lugar para servidores, aposentados e pensionistas.</p>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+  <a href="https://transparencia.betha.cloud/#/a59kfVVZtfZonHcU-LURqA==" target="_blank">
+    <div class="icon">💰</div>
+    Portal Transparência
+  </a>
+</div>
+      <div class="card">
+  <a href="https://www.loja.serpro.gov.br/product/margemconsignavel" target="_blank">
+    <div class="icon">🔁</div>
+    Consignado
+  </a>
+</div>
+      <div class="card">
+  <a href="pdfs/Prova-de-Vida-Passo-a-Passo.pdf" target="_blank">
+    <div class="icon">💙</div>
+    Prova de Vida
+  </a>
+</div>
+      <div class="card"><div class="icon">🤝</div>Código de Ética</div>
+      <div class="card">
+  <a href="https://pncp.gov.br/app/buscar/todos?q=930065&pagina=1" target="_blank">
+    <div class="icon">⚖️</div>
+    Licitações
+  </a>
+</div>
+      <div class="card">
+  <a href="https://pncp.gov.br/app/buscar/todos?q=930065&pagina=1" target="_blank">
+    <div class="icon">⚖️</div>
+    Dispensas
+  </a>
+</div>
+      <div class="card">
+  <a href="https://novowebplanipref.facilinformatica.com.br/" target="_blank">
+    <div class="icon">👤</div>
+    Área do Beneficiário
+  </a>
+</div>
+      <div class="card">
+  <a href="http://fopag3.braconsultoria.com.br:4000/sipweb/trabalhador/login/login.xhtml" target="_blank">
+    <div class="icon">📄</div>
+    Holerite / Informe
+  </a>
+</div>
+    </div>
+  </section>
+
+  <main>
+    <section class="quick-list">
+      <h2 class="section-title">🔗 Links de Acesso Rápido</h2>
+      <div class="quick-item"><div class="quick-icon">🖥️</div><div><strong>Gestão</strong><span>Clique e saiba mais</span></div></div>
+      <div class="quick-item"><div class="quick-icon">📚</div><div><strong>Educação Previdenciária</strong><span>Clique e saiba mais</span></div></div>
+      <div class="quick-item"><div class="quick-icon">☑️</div><div><strong>Programas Institucionais</strong><span>Clique e saiba mais</span></div></div>
+      <div class="quick-item"><div class="quick-icon">💲</div><div><strong>Antecipação do 13º Salário</strong><span>Clique e saiba mais</span></div></div>
+    </section>
+
+    <section class="news-area">
+      <h2 class="section-title">📰 Notícias em Destaque</h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <h3>IPREF é notícia em revistas sobre previdência</h3>
+        </article>
+        <article class="news-card">
+          <h3>Transparência e participação na gestão pública</h3>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 IPREF Guarulhos — Página demonstrativa em HTML
+  </footer>
+</body>
+</html>
