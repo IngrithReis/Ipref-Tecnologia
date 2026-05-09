@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #123;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  background: linear-gradient(90deg, #004779, #009bb5);
+  color: white;
+  padding: 24px 8%;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 0;
+  margin-top: 4px;
+}
+
+.logo .notice {
+  max-width: 920px;
+  line-height: 1.5;
+  margin-top: 12px;
+  white-space: pre-line;
+}
+
+.hero {
+  max-width: 1100px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+  padding: 0 20px;
+}
+
+.banner {
+  min-height: 330px;
+  border-radius: 18px;
+  background:
+    linear-gradient(rgba(0, 58, 102, 0.88), rgba(0, 58, 102, 0.88)),
+    url('/img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  color: white;
+}
+
+.banner h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.banner p {
+  max-width: 480px;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  min-height: 105px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  color: #00528a;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 30px;
+  color: #00a1b8;
+  margin-bottom: 10px;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto 45px;
+  display: grid;
+  grid-template-columns: 1fr 2.1fr;
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.section-title {
+  background: #00a1b8;
+  color: white;
+  padding: 13px 18px;
+  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+}
+
+.quick-list,
+.news-area {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.quick-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.quick-item strong {
+  display: block;
+  font-size: 17px;
+  color: #111;
+}
+
+.quick-item span {
+  color: #006fa6;
+  font-size: 14px;
+}
+
+.quick-icon {
+  font-size: 30px;
+  color: #999;
+  width: 40px;
+  text-align: center;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.news-card {
+  min-height: 210px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #063b63;
+  color: white;
+  display: flex;
+  align-items: end;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.news-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0, 35, 60, 0.85));
+}
+
+.news-card h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.magazine-news {
+  background-image: url('/img/card1.jpg');
+}
+
+.bidding-news {
+  background-image: url('/img/licitacao.jpg');
+}
+
+footer {
+  background: #003c69;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .hero,
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    text-align: center;
+  }
+
+  .banner {
+    padding: 30px;
+  }
+
+  .banner h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cards,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,4 @@
-# Ipref Tecnologia
+# IPREF Tecnologia
 
 Este projeto foi criado com carinho para servir como uma página de redundância do site do IPREF.
 
@@ -6,14 +6,32 @@ A ideia é manter uma versão simples, leve e acessível das principais informa�
 
 ## Sobre o projeto
 
-O site foi desenvolvido em HTML e CSS, com foco em praticidade e fácil manutenção.
+O site foi desenvolvido em React com Vite, com foco em praticidade e fácil manutenção.
 
 ## Estrutura
 
-- `index.html`: página principal do site
-- `img/`: imagens utilizadas na página
-- `pdfs/`: documentos PDF disponibilizados para acesso
+- `index.html`: arquivo base da aplicação
+- `src/`: componentes e estilos da aplicação
+- `public/img/`: imagens utilizadas na página
+- `public/pdfs/`: documentos PDF disponibilizados para acesso
+- `package.json`: dependências e scripts do projeto
 
 ## Como visualizar
 
-Abra o arquivo `index.html` diretamente no navegador.
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Rode o projeto localmente:
+
+```bash
+npm run dev
+```
+
+Gere a versão de produção:
+
+```bash
+npm run build
+```
